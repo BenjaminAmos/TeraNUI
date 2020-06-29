@@ -183,6 +183,13 @@ public class UIIconBar extends CoreWidget {
     public void setMaxValue(float val) {
         maxValue.set(val);
     }
+    
+    /**
+     * @param newValue The new max value for the number of icons.
+     */
+    public void setMaxIcons(int newValue) {
+        this.maxIcons = newValue;
+    }
 
     /**
      * @return The current HalfIconMode used.
