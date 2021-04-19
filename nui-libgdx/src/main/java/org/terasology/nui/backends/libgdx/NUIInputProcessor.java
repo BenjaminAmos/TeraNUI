@@ -89,15 +89,7 @@ public class NUIInputProcessor implements InputProcessor {
             return false;
         }
         Keyboard.Key key = GDXInputUtil.GDXToNuiKey(keycode);
-        char keyChar = GDXInputUtil.getGDXKeyChar(keycode);
         lastKey = key;
-        if (Gdx.input.isKeyPressed(Input.Keys.CONTROL_LEFT) || Gdx.input.isKeyPressed(Input.Keys.CONTROL_RIGHT) || keyChar == '\n') {
-            // NOTE: Control+Key combinations do not produce valid key chars (fixes input field bugs)
-            keyChar = 0;
-        } else if (keyChar != 0 && keyChar != '\t') {
-            return false;
-        }
-
         keyboardActionQueue.add(new RawKeyboardAction(key, ButtonState.DOWN));
         return CONSUME_INPUT;
     }
@@ -109,14 +101,6 @@ public class NUIInputProcessor implements InputProcessor {
         }
 
         Keyboard.Key key = GDXInputUtil.GDXToNuiKey(keycode);
-        char keyChar = GDXInputUtil.getGDXKeyChar(keycode);
-        if (Gdx.input.isKeyPressed(Input.Keys.CONTROL_LEFT) || Gdx.input.isKeyPressed(Input.Keys.CONTROL_RIGHT)) {
-            // NOTE: Control+Key combinations do not produce valid key chars (fixes input field bugs)
-            keyChar = 0;
-        } else if (keyChar != 0) {
-            return false;
-        }
-
         keyboardActionQueue.add(new RawKeyboardAction(key, ButtonState.UP));
         return CONSUME_INPUT;
     }
