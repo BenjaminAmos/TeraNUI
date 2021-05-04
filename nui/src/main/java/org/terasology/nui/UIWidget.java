@@ -30,6 +30,7 @@ import java.util.Optional;
 
 /**
  */
+@org.terasology.context.annotation.IndexInherited
 public interface UIWidget extends Iterable<UIWidget> {
 
     String DEFAULT_MODE = "";
