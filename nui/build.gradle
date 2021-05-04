@@ -28,6 +28,9 @@ dependencies {
     implementation group: 'org.reflections', name: 'reflections', version: '0.9.10'
     implementation "org.slf4j:slf4j-api:1.7.30"
 
+    implementation group: 'org.terasology.gestalt', name: 'gestalt-inject', version: '8.0.0-SNAPSHOT'
+    annotationProcessor group: 'org.terasology.gestalt', name: 'gestalt-inject-java', version: '8.0.0-SNAPSHOT'
+
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.2")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.2")
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.6.2")
